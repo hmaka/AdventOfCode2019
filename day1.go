@@ -4,7 +4,7 @@ import (
 	"bufio"
 	"fmt"
 	"os"
-	//"strconv"
+	"strconv"
 )
 
 func read_file(file_name string) ([]string, error) {
@@ -34,11 +34,14 @@ func read_file(file_name string) ([]string, error) {
 
 func main() {
 	// num, err := strconv.Atoi(line)
-	_, err := read_file("day1.txt")
+	file_lines, _ := read_file("day1.txt")
+	sum := 0
 
-	if err != nil {
-		fmt.Println("Error opening file:", err)
-		return
+	for _, line := range file_lines {
+		num, _ := strconv.Atoi(line)
+
+		sum += (num / 3) - 2
 	}
+	fmt.Println(sum)
 
 }
