@@ -32,5 +32,6 @@ func read_file(file_name string) ([]string, error) {
 }
 
 func main() {
-	day1_func()
+	//day1_func()
+	day2()
 }
